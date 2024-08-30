@@ -1,6 +1,5 @@
 export default function MenuPage() {
   return (
-    <div className="bg-lightBackgroundColor">
       <div className="w-10/12 mx-auto space-y-5 h-screen py-5">
         <button className="border border-transparent bg-primaryColor rounded-xl w-full text-white font-bold my-3 p-3">
           Profile
@@ -17,6 +16,5 @@ export default function MenuPage() {
           </p>
         </div>
       </div>
-    </div>
   );
 }

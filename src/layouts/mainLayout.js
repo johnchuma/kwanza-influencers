@@ -11,7 +11,7 @@ const MainLayout = () => {
         setShowSplashScreen(false)
       }, 3000);
     },[])
-    return ( showSplashScreen?<SplashPage/>: <div>
+    return ( showSplashScreen?<SplashPage/>: <div className="bg-lightBackgroundColor min-h-screen">
         {/* <Navbar/> */}
         <Outlet/>
         {/* <BottomNavbar/> */}
