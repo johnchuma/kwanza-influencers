@@ -10,7 +10,7 @@ module.exports = {
         lightBackgroundColor: "#F9F9F9",
         inputbackgroundColor: "#383838",
         textColor: "#000000",
-        mutedText: "#455A64",
+        mutedText: "#CBC9D7",
       },
     },
   },

@@ -14,7 +14,7 @@ export default function Report() {
     <Formik
       validationSchema={validationSchema}
       onSubmit={(values) => {}}
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ name: "", report: "", screenshot: "" }}
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
         <div className="flex flex-col justify-start items-center bg-lightBackgroundColor text-textColor h-screen space-y-5">
@@ -27,39 +27,36 @@ export default function Report() {
                 <input
                   className="lightInput-style"
                   name="email"
-                  value={values.email}
+                  value={values.name}
                   onChange={handleChange}
                   placeholder="Campaign name"
                 />
-                {/* <div className="absolute left-4"><AiOutlineMail /></div> */}
-                {errors.email && touched.email && (
-                  <p className="text-red-600 text-xs">{errors.email}</p>
+                {errors.name && touched.name && (
+                  <p className="text-red-600 text-xs">{errors.name}</p>
                 )}
               </div>
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Report</label>
                 <input
                   className="lightInput-style"
-                  value={values.password}
+                  value={values.report}
                   onChange={handleChange}
                   placeholder="Date of Post DD/MM/YYYY"
                 />
-                {/* <div className="absolute left-4"><RiLockPasswordLine /></div> */}
-                {errors.password && touched.password && (
-                  <p className="text-red-600 text-xs">{errors.password}</p>
+                {errors.report && touched.report && (
+                  <p className="text-red-600 text-xs">{errors.report}</p>
                 )}
               </div>
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Screenshot</label>
                 <input
                   className="lightInput-style"
-                  value={values.password}
+                  value={values.screenshot}
                   onChange={handleChange}
                   placeholder="Screenshot"
                 />
-                {/* <div className="absolute left-4"><RiLockPasswordLine /></div> */}
-                {errors.password && touched.password && (
-                  <p className="text-red-600 text-xs">{errors.password}</p>
+                {errors.screenshot && touched.screenshot && (
+                  <p className="text-red-600 text-xs">{errors.screenshot}</p>
                 )}
               </div>
               <Button />

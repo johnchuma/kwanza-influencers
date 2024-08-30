@@ -14,7 +14,7 @@ export default function ProfileUpdate() {
     <Formik
       validationSchema={validationSchema}
       onSubmit={(values) => {}}
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ name: "", phone: "", email: "", social: "" }}
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
         <div className="flex flex-col justify-start items-center bg-lightBackgroundColor text-textColor h-screen space-y-5">
@@ -25,27 +25,26 @@ export default function ProfileUpdate() {
                 <label className="text-sm pb-2">Name</label>
                 <input
                   className="lightInput-style"
-                  name="email"
-                  value={values.email}
+                  name="name"
+                  value={values.name}
                   onChange={handleChange}
                   placeholder="Full name"
                 />
-                {/* <div className="absolute left-4"><AiOutlineMail /></div> */}
-                {errors.email && touched.email && (
-                  <p className="text-red-600 text-xs">{errors.email}</p>
+                {errors.name && touched.name && (
+                  <p className="text-red-600 text-xs">{errors.name}</p>
                 )}
               </div>
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Phone Number</label>
                 <input
                   className="lightInput-style"
-                  value={values.password}
+                  value={values.phone}
+                  name="phone"
                   onChange={handleChange}
                   placeholder="+255 123 456 789"
                 />
-                {/* <div className="absolute left-4"><RiLockPasswordLine /></div> */}
-                {errors.password && touched.password && (
-                  <p className="text-red-600 text-xs">{errors.password}</p>
+                {errors.phone && touched.phone && (
+                  <p className="text-red-600 text-xs">{errors.phone}</p>
                 )}
               </div>
               <div className="flex flex-col my-2">
@@ -57,7 +56,6 @@ export default function ProfileUpdate() {
                   onChange={handleChange}
                   placeholder="smartcodes@smartafrica.group"
                 />
-                {/* <div className="absolute left-4"><AiOutlineMail /></div> */}
                 {errors.email && touched.email && (
                   <p className="text-red-600 text-xs">{errors.email}</p>
                 )}
@@ -66,14 +64,13 @@ export default function ProfileUpdate() {
                 <label className="text-sm pb-2">Social media</label>
                 <input
                   className="lightInput-style"
-                  name="email"
-                  value={values.email}
+                  name="social"
+                  value={values.social}
                   onChange={handleChange}
                   placeholder="Twitter"
                 />
-                {/* <div className="absolute left-4"><AiOutlineMail /></div> */}
-                {errors.email && touched.email && (
-                  <p className="text-red-600 text-xs">{errors.email}</p>
+                {errors.social && touched.social && (
+                  <p className="text-red-600 text-xs">{errors.social}</p>
                 )}
               </div>
               <Button />
@@ -84,5 +81,3 @@ export default function ProfileUpdate() {
     </Formik>
   );
 }
-
-  

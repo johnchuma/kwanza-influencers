@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SplashPage from "../pages/splashPage";
 import Navbar from "../components/navbar";
+import BottomNavbar from "../components/bottomNavbar";
 
 const MainLayout = () => {
     const [showSplashScreen, setShowSplashScreen] = useState(true)
@@ -13,6 +14,7 @@ const MainLayout = () => {
     return ( showSplashScreen?<SplashPage/>: <div>
         {/* <Navbar/> */}
         <Outlet/>
+        {/* <BottomNavbar/> */}
     </div> );
 }
  
