@@ -6,6 +6,6 @@
 .input-style {
     @apply border w-full rounded-md bg-inputbackgroundColor border-white border-opacity-20 focus:border-primaryColor hover:ring-primaryColor placeholder:text-white placeholder:text-sm
 }
-.lightInput-style {
-    @apply border rounded-md border-transparent bg-white placeholder:text-textColor placeholder:text-opacity-50 placeholder:text-sm focus:border-primaryColor hover:ring-primaryColor
+.light-input-style {
+    @apply border border-textColor border-opacity-10 rounded-md  bg-white placeholder:text-textColor placeholder:text-opacity-50 placeholder:text-sm focus:border-primaryColor hover:ring-primaryColor
 }

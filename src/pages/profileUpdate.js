@@ -18,13 +18,13 @@ export default function ProfileUpdate() {
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
         <div className="flex flex-col justify-start items-center bg-lightBackgroundColor text-textColor h-screen space-y-5">
-          <div className="w-10/12 my-5">
+          <div className="w-11/12 ">
             {" "}
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Name</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   name="name"
                   value={values.name}
                   onChange={handleChange}
@@ -37,7 +37,7 @@ export default function ProfileUpdate() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Phone Number</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   value={values.phone}
                   name="phone"
                   onChange={handleChange}
@@ -50,7 +50,7 @@ export default function ProfileUpdate() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Email Address</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   name="email"
                   value={values.email}
                   onChange={handleChange}
@@ -63,7 +63,7 @@ export default function ProfileUpdate() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Social media</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   name="social"
                   value={values.social}
                   onChange={handleChange}
@@ -73,7 +73,7 @@ export default function ProfileUpdate() {
                   <p className="text-red-600 text-xs">{errors.social}</p>
                 )}
               </div>
-              <Button />
+              <Button text={"Save"} />
             </form>
           </div>
         </div>

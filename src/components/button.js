@@ -1,8 +1,17 @@
-export default function Button(){
-return(
+export default function Button({ text, onClick, loading }) {
+  return (
     <div>
-        <button className="border border-transparent rounded-xl w-full bg-gradient-to-r from-primaryColor to-secondaryColor text-textColor font-bold my-5 p-3">Login</button>
+      <button
+        type="submit"
+        onClick={onClick}
+        className="border border-transparent flex justify-center rounded-xl  w-full bg-gradient-to-r from-primaryColor to-secondaryColor text-textColor font-bold my-5 p-3"
+      >
+        {loading ? (
+          <div className="border-4 size-6 animate-spin rounded-full border-b-transparent border-white" />
+        ) : (
+          text
+        )}
+      </button>
     </div>
-   
-)
-};
+  );
+}

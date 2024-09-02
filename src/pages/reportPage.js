@@ -25,7 +25,7 @@ export default function Report() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Campaign name</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   name="email"
                   value={values.name}
                   onChange={handleChange}
@@ -38,7 +38,7 @@ export default function Report() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Report</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   value={values.report}
                   onChange={handleChange}
                   placeholder="Date of Post DD/MM/YYYY"
@@ -50,7 +50,7 @@ export default function Report() {
               <div className="flex flex-col my-2">
                 <label className="text-sm pb-2">Screenshot</label>
                 <input
-                  className="lightInput-style"
+                  className="light-input-style"
                   value={values.screenshot}
                   onChange={handleChange}
                   placeholder="Screenshot"
