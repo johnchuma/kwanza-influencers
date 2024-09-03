@@ -13,17 +13,32 @@ import {
   getInfluencerInfo,
 } from "../controllers/influencerController";
 import { AiOutlineYoutube } from "react-icons/ai";
+import Loader from "../components/loader";
 
 const HomePage = () => {
   const [stats, setStats] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const data = getAuthInfo();
     console.log(data);
-    // getInfluencerInfo(data.id).then((response) => {
-    //   console.log(response);
-    // });
+    setLoading(true);
+    getInfluencerInfo(data.id).then((response) => {
+      const data = response.data.data;
+      console.log("influencer data", data);
+
+      setData(data);
+      setLoading(false);
+      console.log(response);
+    });
   }, []);
-  return (
+  return loading ? (
+    <Loader />
+  ) : data == null ? (
+    <>
+      <h1>No Data</h1>
+    </>
+  ) : (
     <div className="min-h-screen">
       <div className="w-11/12 mx-auto space-y-2 py-0">
         <div className="grid grid-cols-3 gap-2 bg-white rounded-lg p-2">
@@ -44,15 +59,31 @@ const HomePage = () => {
           <h3 className="py-2">Profile Connected</h3>
           <div className="grid grid-cols-2 gap-3">
             {[
-              { title: "Likes", icon: <FiFacebook />, value: "38,500" },
-              { title: "Likes", icon: <FaInstagram />, value: "38,500" },
-              { title: "Followers", icon: <BsTwitterX />, value: "5500" },
+              {
+                title: "Likes",
+                icon: <FiFacebook />,
+                value: data.influencerDetails.facebook_likes,
+              },
+              {
+                title: "Likes",
+                icon: <FaInstagram />,
+                value: data.influencerDetails.instagram_followers,
+              },
+              {
+                title: "Followers",
+                icon: <BsTwitterX />,
+                value: data.influencerDetails.twitter_followers,
+              },
               {
                 title: "Viewers",
                 icon: <AiOutlineYoutube />,
                 value: "38,500",
               },
-              { title: "Audience", icon: <LuGlobe />, value: "38,500" },
+              {
+                title: "Audience",
+                icon: <LuGlobe />,
+                value: data.influencerDetails.visitors,
+              },
             ].map((item) => {
               return (
                 <div className="border border-transparent bg-white rounded-md p-2">

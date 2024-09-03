@@ -23,7 +23,7 @@ export default function PostPage() {
   }, []);
   return loading ? (
     <Loader />
-  ) : data ? (
+  ) : data == null ? (
     <div className="">
       <h1 className="text-mutedText text-center">No Data Available</h1>
     </div>
@@ -33,12 +33,13 @@ export default function PostPage() {
         <div>
           {" "}
           <img
-            src="/AdImage.svg"
+            src={data.image_url}
             className="w-full rounded-lg "
             alt="ads"
           ></img>
         </div>
-        <Button text={"Post"} />
+        <a></a>
+        <Button text={"Share"} />
       </div>
     </div>
   );

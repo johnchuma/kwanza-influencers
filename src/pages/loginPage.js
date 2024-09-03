@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../controllers/authController";
 import { useState } from "react";
 import { setAuthInfo } from "../utils/localStorageFunctions";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -26,13 +27,18 @@ export default function Login() {
             password: values.password,
           };
           setUploading(true);
-          login(payload).then((response) => {
-            console.log("Payload info", response);
-            console.log("response", response.data);
-            setAuthInfo(response.data);
-            navigate("/");
-            setUploading(false);
-          });
+          login(payload)
+            .then((response) => {
+              console.log("Payload info", response);
+              console.log("response", response.data);
+              setAuthInfo(response.data);
+              navigate("/");
+              setUploading(false);
+            })
+            .catch((e) => {
+              toast("Wrong email or password");
+              setUploading(false);
+            });
         }}
         initialValues={{ email: "", password: "" }}
       >
@@ -90,6 +96,9 @@ export default function Login() {
                   </div>
                   <div className="mt-16">
                     <Button loading={uploading} text={"Login"} />
+                    <div className="text-red-400 text-center ">
+                      <ToastContainer />
+                    </div>
                   </div>
                 </form>
                 <div className="text-center">

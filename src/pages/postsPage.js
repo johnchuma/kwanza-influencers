@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getAuthInfo } from "../utils/localStorageFunctions";
 import { getGigPosts } from "../controllers/gigController";
 import Loader from "../components/loader";
+import NoData from "../components/noData";
 
 export default function PostsPage() {
   const navigate = useNavigate();
@@ -29,9 +30,7 @@ export default function PostsPage() {
       <div className="  w-11/12 mx-auto rounded-md">
         <div className="space-y-4">
           {data.length < 1 ? (
-            <div>
-              <h1 className="text-mutedText text-center">No Data Available</h1>
-            </div>
+            <NoData />
           ) : (
             data.map((item) => {
               return (
@@ -52,7 +51,7 @@ export default function PostsPage() {
                   </div>
                   <div
                     onClick={() => {
-                      navigate("/post/3");
+                      navigate(`/post/${item.id}`);
                     }}
                   >
                     <img

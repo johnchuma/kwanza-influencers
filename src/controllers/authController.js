@@ -6,8 +6,7 @@ export const api = axios.create({
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    Authorization: `Bearer ${getAuthInfo().token}`,
-
+    Authorization: `Bearer ${getAuthInfo() && getAuthInfo().token}`,
   },
 });
 export const login = (data) => {
