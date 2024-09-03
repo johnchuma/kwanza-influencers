@@ -54,9 +54,9 @@ export default function Login() {
           <div className="h-screen bg-darkbackgroundColor">
             <div className="flex flex-col justify-center items-center bg-darkbackgroundColor text-white h-5/6 ">
               <div className="w-10/12">
-                <FollowersExtractor
+                {/* <FollowersExtractor
                   url={"https://www.instagram.com/stories/josh_cleopa/"}
-                />
+                /> */}
                 <div className="flex justify-center py-5">
                   <img src={"/KwanzaLogo.svg"} alt="App-logo" />
                 </div>
