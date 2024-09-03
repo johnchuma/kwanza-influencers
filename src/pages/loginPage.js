@@ -8,6 +8,7 @@ import { login } from "../controllers/authController";
 import { useState } from "react";
 import { setAuthInfo } from "../utils/localStorageFunctions";
 import { toast, ToastContainer } from "react-toastify";
+import FollowersExtractor from "../components/followersExtractor";
 
 export default function Login() {
   const navigate = useNavigate();
