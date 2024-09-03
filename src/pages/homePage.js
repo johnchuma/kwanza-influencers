@@ -24,14 +24,16 @@ const HomePage = () => {
     const data = getAuthInfo();
     console.log(data);
     setLoading(true);
-    getInfluencerInfo(data.id).then((response) => {
-      const data = response.data.data;
-      console.log("influencer data", data);
+    if (data) {
+      getInfluencerInfo(data.id).then((response) => {
+        const data = response.data.data;
+        console.log("influencer data", data);
 
-      setData(data);
-      setLoading(false);
-      console.log(response);
-    });
+        setData(data);
+        setLoading(false);
+        console.log(response);
+      });
+    }
   }, []);
   return loading ? (
     <Loader />
