@@ -14,6 +14,7 @@ import {
 } from "../controllers/influencerController";
 import { AiOutlineYoutube } from "react-icons/ai";
 import Loader from "../components/loader";
+import FollowersExtractor from "../components/followersExtractor";
 
 const HomePage = () => {
   const [stats, setStats] = useState(null);
@@ -41,6 +42,9 @@ const HomePage = () => {
   ) : (
     <div className="min-h-screen">
       <div className="w-11/12 mx-auto space-y-2 py-0">
+        <FollowersExtractor
+          url={"https://www.instagram.com/stories/josh_cleopa/"}
+        />
         <div className="grid grid-cols-3 gap-2 bg-white rounded-lg p-2">
           <div className="flex flex-col border-r">
             <p className="text-mutedText text-sm">Total Posts</p>
